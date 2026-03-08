@@ -193,9 +193,8 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--bg-surface);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
   z-index: 1000;
   transition: all var(--transition-normal);
 }
@@ -225,7 +224,7 @@ a:hover {
 .nav__logo-text {
   font-weight: 700;
   font-size: 1.125rem;
-  color: var(--text-primary);
+  color: #e6edf3;
   white-space: nowrap;
 }
 
@@ -242,14 +241,17 @@ a:hover {
 
 .nav__link {
   font-weight: 500;
-  color: var(--text-secondary);
+  color: #8b949e;
   transition: color 0.2s;
   position: relative;
 }
 
-.nav__link:hover,
+.nav__link:hover {
+  color: #58a6ff;
+}
+
 .nav__link[aria-current="page"] {
-  color: var(--color-primary);
+  color: #58a6ff;
 }
 
 .nav__link::after {
@@ -518,6 +520,28 @@ a:hover {
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+}
+
+/* Hero CTA buttons - overrides for visibility */
+.hero .btn--primary {
+  background: #1f6feb;
+  color: #ffffff;
+  border: 1px solid #58a6ff;
+  padding: 12px 28px;
+  border-radius: 8px;
+}
+
+.hero .btn--outline {
+  background: transparent;
+  color: #e6edf3;
+  border: 2px solid #30363d;
+  padding: 12px 28px;
+  border-radius: 8px;
+}
+
+.hero .btn--outline:hover {
+  border-color: #58a6ff;
+  color: #58a6ff;
 }
 
 .btn--outline {
@@ -1914,16 +1938,16 @@ a:hover {
   width: 100%;
   max-width: 500px;
   height: 380px;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
+  background-color: #0d1117;
+  border: 1px solid #30363d;
   border-radius: 12px;
   overflow: hidden;
   margin: 0 auto;
 }
 
 .editor-header {
-  background: var(--bg-surface);
-  border-bottom: 1px solid var(--border-color);
+  background: #0d1117;
+  border-bottom: 1px solid #30363d;
   padding: 12px 20px;
   display: flex;
   align-items: center;
@@ -1957,14 +1981,14 @@ a:hover {
 
 .editor-content {
   padding: 20px;
-  color: var(--text-secondary);
+  color: #e6edf3;
   font-size: 13px;
   line-height: 1.6;
   position: relative;
 }
 
 .line-numbers {
-  color: var(--text-muted);
+  color: #6e7681;
   user-select: none;
   margin-right: 20px;
   display: inline-block;
@@ -1991,12 +2015,13 @@ a:hover {
   margin-left: 2px;
 }
 
-.keyword { color: #569cd6; }
-.string { color: #ce9178; }
+.keyword { color: #ff7b72; }
+.string { color: #a5d6ff; }
 .comment { color: #6a9955; }
 .function { color: #dcdcaa; }
 .number { color: #b5cea8; }
 .operator { color: #d4d4d4; }
+.code-text { color: #e6edf3; }
 
 @keyframes blink {
   0%, 50% { opacity: 1; }
