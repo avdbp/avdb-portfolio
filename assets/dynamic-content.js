@@ -209,12 +209,14 @@ function renderProjects(filter) {
   if (!projectsGrid) return;
   
   const filterValue = filter || 'all';
-  const projects = filterValue === 'all'
-    ? portfolioData.projects
+  let projects = filterValue === 'all'
+    ? [...portfolioData.projects]
     : portfolioData.projects.filter(p => {
         const cats = Array.isArray(p.categories) ? p.categories : [p.category || 'other'];
         return cats.includes(filterValue);
       });
+  // Ordenar: cards verticales primero (para que la primera fila tenga 3), luego horizontales (apps)
+  projects = projects.sort((a, b) => (a.wideCard ? 1 : 0) - (b.wideCard ? 1 : 0));
   
   projectsGrid.innerHTML = projects.map(project => {
     const isWide = project.wideCard === true;
@@ -232,8 +234,8 @@ function renderProjects(filter) {
           ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
         </div>
         <div class="project-links">
-          <a href="${project.link}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">View Project</a>
-          ${project.repo ? `<a href="${project.repo}" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">View Code</a>` : ''}
+          <a href="${project.link}" class="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+          ${project.repo ? `<a href="${project.repo}" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>` : ''}
         </div>
       </div>
     </div>`;
@@ -250,8 +252,8 @@ function renderProjects(filter) {
           ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
         </div>
         <div class="project-links">
-          <a href="${project.link}" class="btn btn--primary" target="_blank" rel="noopener noreferrer">View Project</a>
-          ${project.repo ? `<a href="${project.repo}" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">View Code</a>` : ''}
+          <a href="${project.link}" class="btn-primary" target="_blank" rel="noopener noreferrer">View Project</a>
+          ${project.repo ? `<a href="${project.repo}" class="btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>` : ''}
         </div>
       </div>
     </div>`;
