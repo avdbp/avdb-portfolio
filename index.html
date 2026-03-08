@@ -33,8 +33,8 @@
   <meta property="twitter:image" content="https://res.cloudinary.com/dqph2qm49/image/upload/v1727992809/rocketMedia/alejandro_a6gkqs.png">
   
   <!-- Additional SEO Meta Tags -->
-  <meta name="theme-color" content="#0d1117">
-  <meta name="msapplication-TileColor" content="#0d1117">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="msapplication-TileColor" content="#0a0a0a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Alejandro van den Bussche Paris">
@@ -54,10 +54,10 @@
   <link rel="preconnect" href="https://res.cloudinary.com">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles.css?v=4">
+  <link rel="stylesheet" href="/assets/styles.css?v=5">
   
   <!-- Structured Data / Schema.org -->
   <script type="application/ld+json">
@@ -83,9 +83,9 @@
 </head>
 <body>
   <!-- Navigation -->
-  <nav class="nav">
+  <nav class="nav nav-amber">
     <div class="container nav__container">
-      <a href="/" class="nav__logo-link nav__logo-text" aria-label="Alejandro van den Bussche Paris - Home">
+      <a href="/" class="nav__logo-link" aria-label="Alejandro van den Bussche Paris - Home">
         Alejandro van den Bussche Paris
       </a>
       
@@ -93,7 +93,7 @@
         <li><a href="/" class="nav__link" aria-current="page">Home</a></li>
         <li><a href="/projects.html" class="nav__link">Projects</a></li>
         <li><a href="/about.html" class="nav__link">About</a></li>
-        <li><a href="/contact.html" class="nav__link">Contact</a></li>
+        <li><a href="/contact.html" class="nav-hire">Hire Me</a></li>
       </ul>
       
       <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
@@ -106,90 +106,56 @@
   <main id="main" role="main">
     <!-- Hero Section -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <h1 id="hero-title" class="hero__title">Hi, I'm <span class="highlight">Alejandro van den Bussche Paris</span>.</h1>
-            <p class="hero__subtitle">Full Stack / Frontend Developer</p>
-            <p class="hero__description">I build fast, modern web experiences. Available for full-time, part-time, or select freelance projects.</p>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="/projects.html" class="btn btn--primary" aria-label="See my work">See My Work</a>
-              <a href="/about.html" class="btn btn--outline" aria-label="About me">About Me</a>
-            </div>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span class="tag-dot"></span>
+            Available for hire · Full Stack Developer
           </div>
-          <div class="hero__image">
-            <div class="code-editor">
-              <div class="editor-header">
-                <div class="window-controls">
-                  <div class="control close"></div>
-                  <div class="control minimize"></div>
-                  <div class="control maximize"></div>
-                </div>
-                <div class="file-tab">portfolio.js</div>
+          <h1 id="hero-title" class="hero-title">
+            I build<br>
+            <em>fast</em> web<br>
+            experiences.
+          </h1>
+          <p class="hero-sub">
+            React, Node.js, and modern tooling — from idea to deployment.
+            Based in Barcelona. Open to remote worldwide.
+          </p>
+          <div class="hero-actions">
+            <a href="/projects.html" class="btn-primary">View Projects</a>
+            <a href="/contact.html" class="btn-ghost">Get in touch ↗</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years exp.</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Projects</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Remote ready</span></div>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <div class="traffic-lights">
+                <span class="tl red"></span>
+                <span class="tl yellow"></span>
+                <span class="tl green"></span>
               </div>
-              
-              <div class="editor-content">
-                <div class="code-line">
-                  <span class="line-numbers">1</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">2</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">3</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">4</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">5</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">6</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">7</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">8</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">9</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">10</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">11</span>
-                  <span class="code-text"></span>
-                </div>
-                
-                <div class="code-line">
-                  <span class="line-numbers">12</span>
-                  <span class="code-text"></span>
-                  <span class="cursor"></span>
-                </div>
-              </div>
+              <span class="hero-card-title">portfolio.js</span>
+            </div>
+            <div class="hero-card-body">
+              <div class="code-line"><span class="ln">1</span><span class="kw">const</span> <span class="fn">developer</span> = {</div>
+              <div class="code-line"><span class="ln">2</span>  name: <span class="str">'Alejandro vdB'</span>,</div>
+              <div class="code-line"><span class="ln">3</span>  role: <span class="str">'Full Stack Dev'</span>,</div>
+              <div class="code-line"><span class="ln">4</span>  stack: [<span class="str">'React'</span>, <span class="str">'Node'</span>, <span class="str">'JS'</span>],</div>
+              <div class="code-line"><span class="ln">5</span>  available: <span class="kw2">true</span>,</div>
+              <div class="code-line"><span class="ln">6</span>  remote: <span class="kw2">true</span>,</div>
+              <div class="code-line"><span class="ln">7</span>};</div>
+              <div class="code-line empty"><span class="ln">8</span></div>
+              <div class="code-line"><span class="ln">9</span><span class="kw">export</span> <span class="kw">default</span> developer;</div>
+            </div>
+            <div class="hero-card-footer">
+              <span class="badge-green">● available</span>
             </div>
           </div>
         </div>
@@ -201,6 +167,7 @@
       <div class="container">
         <div class="what-we-do__content">
           <header class="section-header">
+            <span class="section-label">Services</span>
             <h2 id="what-we-do-title" class="section-title">What I Do</h2>
             <p class="section-description">
               I build modern, responsive websites and web applications from concept to deployment. 
@@ -288,6 +255,7 @@
       <div class="container">
         <div class="why-choose-us__content">
           <header class="section-header">
+            <span class="section-label">Why me</span>
             <h2 id="why-choose-title" class="section-title text-center">Why Choose Me?</h2>
           </header>
           
@@ -345,6 +313,7 @@
       <div class="container">
         <div class="technologies__content">
           <header class="section-header">
+            <span class="section-label">Technologies</span>
             <h2 id="technologies-title" class="section-title text-center">Tech Stack</h2>
             <p class="section-description text-center">
               I stay current with modern tools to deliver reliable, scalable solutions
@@ -407,15 +376,16 @@
       <div class="container">
         <div class="cta-section__content text-center">
           <header class="section-header">
+            <span class="section-label">Get in touch</span>
             <h2 id="cta-title" class="section-title">Let's Work Together</h2>
-            <p class="section-description-red">
+            <p class="section-description">
               I'm available for full-time, part-time, or select freelance projects. 
               If you're hiring or have a project in mind, let's talk.
             </p>
           </header>
           <div class="cta-buttons">
-            <a href="/contact.html" class="btn btn--primary" aria-label="Get in touch">Get in Touch</a>
-            <a href="/projects.html" class="btn btn--outline" aria-label="See my work">See My Work</a>
+            <a href="/contact.html" class="btn-primary" aria-label="Get in touch">Get in Touch</a>
+            <a href="/projects.html" class="btn-ghost" aria-label="See my work">See My Work</a>
           </div>
         </div>
       </div>
@@ -456,132 +426,7 @@
     </div>
   </footer>
 
-  <!-- Code Editor Animation JavaScript -->
-  <script>
-    // Code Editor Typewriter Effect
-    const codeLines = [
-      "const developer = {",
-      "  name: 'Alejandro van den Bussche Paris',",
-      "  stack: [",
-      "    'React.js',",
-      "    'JavaScript',",
-      "    'Node.js'",
-      "  ],",
-      "  available() {",
-      "    return 'Open to work & freelance';",
-      "  }",
-      "}; // Let's build!",
-      ""
-    ];
-
-    const codeTextElements = document.querySelectorAll('.code-text');
-    let currentLine = 0;
-    let currentChar = 0;
-
-    function typeNextLine() {
-      if (currentLine >= codeLines.length) {
-        // Reiniciar después de 2 segundos
-        setTimeout(reset, 2000);
-        return;
-      }
-
-      const line = codeLines[currentLine];
-      const element = codeTextElements[currentLine];
-      
-      if (line) {
-        typeText(element, line);
-      } else {
-        currentLine++;
-        setTimeout(typeNextLine, 100);
-      }
-    }
-
-    function typeText(element, text) {
-      let index = 0;
-      element.innerHTML = '';
-      
-      const typeChar = () => {
-        if (index < text.length) {
-          const char = text[index];
-          const coloredChar = applySyntaxHighlighting(char, text, index);
-          element.innerHTML += coloredChar;
-          index++;
-          setTimeout(typeChar, 30); // Velocidad rápida
-        } else {
-          currentLine++;
-          setTimeout(typeNextLine, 100);
-        }
-      };
-      
-      typeChar();
-    }
-
-    function applySyntaxHighlighting(char, fullText, index) {
-      // Detectar strings
-      if (char === "'" || char === '"') {
-        return `<span class="string">${char}</span>`;
-      }
-      
-      // Detectar comentarios
-      if (fullText.includes('//') && index >= fullText.indexOf('//')) {
-        return `<span class="comment">${char}</span>`;
-      }
-      
-      // Detectar keywords
-      const keywords = ['const', 'let', 'var', 'function', 'return', 'if', 'else', 'for', 'while'];
-      const currentWord = getCurrentWord(fullText, index);
-      
-      if (keywords.includes(currentWord)) {
-        return `<span class="keyword">${char}</span>`;
-      }
-      
-      // Detectar funciones
-      if (currentWord.endsWith('()') && char === '(') {
-        return `<span class="function">${char}</span>`;
-      }
-      
-      // Detectar números
-      if (/\d/.test(char)) {
-        return `<span class="number">${char}</span>`;
-      }
-      
-      return char;
-    }
-
-    function getCurrentWord(text, index) {
-      let start = index;
-      let end = index;
-      
-      while (start > 0 && /\w/.test(text[start - 1])) {
-        start--;
-      }
-      
-      while (end < text.length && /\w/.test(text[end])) {
-        end++;
-      }
-      
-      return text.substring(start, end);
-    }
-
-    function reset() {
-      currentLine = 0;
-      currentChar = 0;
-      
-      // Limpiar todo el texto
-      codeTextElements.forEach(element => {
-        element.innerHTML = '';
-      });
-      
-      // Reiniciar después de 1 segundo
-      setTimeout(typeNextLine, 1000);
-    }
-
-    // Iniciar cuando se carga la página
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(typeNextLine, 500);
-    });
-  </script>
-
+  <script src="/assets/nav-active.js"></script>
   <!-- Simple JavaScript -->
   <script>
     console.log('=== SIMPLE JS LOADED ===');
