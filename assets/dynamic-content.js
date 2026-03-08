@@ -339,7 +339,7 @@ function renderProcess() {
 function initializePage() {
   const currentPage = window.location.pathname;
   
-  if (currentPage.includes('projects.html')) {
+  if (currentPage.includes('projects')) {
     console.log('📁 Projects page detected');
     renderProjects('all');
     initProjectFilters();
