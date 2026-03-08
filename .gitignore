@@ -19,8 +19,7 @@ config/emailjs.js
 secrets/
 *.config.js
 
-# Vercel Configuration
-vercel.json
+# Vercel Configuration (solo archivos con secretos)
 .env.local
 .env.production.local
 
