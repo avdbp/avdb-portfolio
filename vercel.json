@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "avdb-portfolio",
   "builds": [
     {
       "src": "**/*",
