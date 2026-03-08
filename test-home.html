@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Home - Rocket Media</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+    .success { color: green; }
+    .error { color: red; }
+    .info { color: blue; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Test Home Page</h1>
+  
+  <div class="test-section">
+    <h2>Elementos del DOM</h2>
+    <div id="dom-status">Verificando...</div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Datos del Portafolio</h2>
+    <div id="data-status">Verificando...</div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Funcionalidad JavaScript</h2>
+    <div id="js-status">Verificando...</div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Logs de Consola</h2>
+    <div id="console-logs" style="background: #f5f5f5; padding: 10px; max-height: 300px; overflow-y: auto; font-family: monospace; font-size: 12px;"></div>
+  </div>
+  
+  <script>
+    // Capturar logs de consola
+    const originalLog = console.log;
+    const originalError = console.error;
+    const logsContainer = document.getElementById('console-logs');
+    
+    function addLog(message, type = 'log') {
+      const logEntry = document.createElement('div');
+      logEntry.style.color = type === 'error' ? 'red' : type === 'warn' ? 'orange' : 'black';
+      logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      logsContainer.appendChild(logEntry);
+      logsContainer.scrollTop = logsContainer.scrollHeight;
+    }
+    
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      addLog(args.join(' '));
+    };
+    
+    console.error = function(...args) {
+      originalError.apply(console, args);
+      addLog(args.join(' '), 'error');
+    };
+    
+    // Verificar elementos del DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      const domStatus = document.getElementById('dom-status');
+      
+      // Simular elementos del home
+      const testElements = {
+        'Hero Title': document.createElement('h1'),
+        'Hero Subtitle': document.createElement('p'),
+        'Hero Description': document.createElement('p'),
+        'Hero CTA': document.createElement('a'),
+        'Nav Elements': document.createElement('div'),
+        'Footer Elements': document.createElement('div')
+      };
+      
+      // Agregar atributos data
+      testElements['Hero Title'].setAttribute('data-hero', 'title');
+      testElements['Hero Subtitle'].setAttribute('data-hero', 'subtitle');
+      testElements['Hero Description'].setAttribute('data-hero', 'description');
+      testElements['Hero CTA'].setAttribute('data-hero', 'cta');
+      testElements['Nav Elements'].setAttribute('data-nav', 'home');
+      testElements['Footer Elements'].setAttribute('data-footer', 'description');
+      
+      domStatus.innerHTML = '<span class="success">✅ Elementos del DOM creados correctamente</span>';
+      
+      // Simular portfolioData
+      window.portfolioData = {
+        en: {
+          nav: {
+            home: 'Home',
+            projects: 'Projects',
+            about: 'About',
+            contact: 'Contact'
+          },
+          home: {
+            hero: {
+              title: 'Rocket Media Portfolio',
+              subtitle: 'Web Development & Design Studio',
+              description: 'Creating modern, responsive websites and web applications with clean code and exceptional user experience.',
+              cta: 'View Projects'
+            }
+          },
+          footer: {
+            description: 'Web development and design studio creating modern, responsive websites.',
+            copyright: '© 2025 Rocket Media. All rights reserved.'
+          }
+        },
+        es: {
+          nav: {
+            home: 'Inicio',
+            projects: 'Proyectos',
+            about: 'Acerca de',
+            contact: 'Contacto'
+          },
+          home: {
+            hero: {
+              title: 'Portafolio Rocket Media',
+              subtitle: 'Estudio de Desarrollo y Diseño Web',
+              description: 'Creando sitios web modernos y responsivos con código limpio y experiencia de usuario excepcional.',
+              cta: 'Ver Proyectos'
+            }
+          },
+          footer: {
+            description: 'Estudio de desarrollo web creando sitios web modernos y responsivos.',
+            copyright: '© 2025 Rocket Media. Todos los derechos reservados.'
+          }
+        }
+      };
+      
+      const dataStatus = document.getElementById('data-status');
+      dataStatus.innerHTML = '<span class="success">✅ portfolioData simulado correctamente</span>';
+      
+      // Simular proyectos
+      window.projects = [
+        {
+          id: 'test-project',
+          title: { en: 'Test Project', es: 'Proyecto de Prueba' },
+          description: { en: 'This is a test project', es: 'Este es un proyecto de prueba' },
+          image: 'https://via.placeholder.com/400x300/cccccc/666666?text=Test+Project',
+          tags: ['HTML', 'CSS', 'JavaScript'],
+          links: { github: 'https://github.com/test', website: 'https://test.com' }
+        }
+      ];
+      
+      // Ahora cargar el JavaScript del home
+      const script = document.createElement('script');
+      script.src = '/assets/home-simple.js';
+      script.onload = () => {
+        const jsStatus = document.getElementById('js-status');
+        jsStatus.innerHTML = '<span class="success">✅ JavaScript del home cargado correctamente</span>';
+        
+        // Verificar que las funciones se ejecutaron
+        setTimeout(() => {
+          if (window.portfolioData && window.projects) {
+            jsStatus.innerHTML += '<br><span class="success">✅ Datos disponibles en window</span>';
+          } else {
+            jsStatus.innerHTML += '<br><span class="error">❌ Datos no disponibles en window</span>';
+          }
+        }, 1000);
+      };
+      
+      script.onerror = () => {
+        const jsStatus = document.getElementById('js-status');
+        jsStatus.innerHTML = '<span class="error">❌ Error cargando JavaScript del home</span>';
+      };
+      
+      document.head.appendChild(script);
+    });
+  </script>
+</body>
+</html>
+

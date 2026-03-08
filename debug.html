@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug - Rocket Media Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .debug-section { border: 2px solid #ccc; padding: 20px; margin: 20px 0; }
+    .project-card { border: 1px solid #ddd; padding: 15px; margin: 10px 0; border-radius: 8px; }
+    .project-image { background: #f5f5f5; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+    .tag { background: #e0e0e0; padding: 4px 8px; border-radius: 4px; margin-right: 5px; font-size: 12px; }
+    .btn { display: inline-block; padding: 8px 16px; margin: 5px; background: #c51d15; color: white; text-decoration: none; border-radius: 4px; }
+    .btn--outline { background: transparent; color: #c51d15; border: 1px solid #c51d15; }
+  </style>
+</head>
+<body>
+  <h1>🐛 Debug - Rocket Media Portfolio</h1>
+  
+  <div class="debug-section">
+    <h2>Estado de carga</h2>
+    <div id="load-status">Verificando...</div>
+  </div>
+  
+  <div class="debug-section">
+    <h2>Datos disponibles</h2>
+    <div id="data-status">Verificando...</div>
+  </div>
+  
+  <div class="debug-section">
+    <h2>Proyectos destacados (Home)</h2>
+    <div id="featured-projects">Cargando...</div>
+  </div>
+  
+  <div class="debug-section">
+    <h2>Todos los proyectos</h2>
+    <div id="all-projects">Cargando...</div>
+  </div>
+
+  <script src="/assets/portfolio-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('=== DEBUG PAGE LOADED ===');
+      
+      const loadStatus = document.getElementById('load-status');
+      const dataStatus = document.getElementById('data-status');
+      const featuredProjects = document.getElementById('featured-projects');
+      const allProjects = document.getElementById('all-projects');
+      
+      // Verificar carga de datos
+      if (window.portfolioData && window.projects) {
+        loadStatus.innerHTML = '<strong style="color: green;">✅ Datos cargados correctamente</strong>';
+        
+        dataStatus.innerHTML = `
+          <p><strong>Total de proyectos:</strong> ${window.projects.length}</p>
+          <p><strong>Idiomas disponibles:</strong> ${Object.keys(window.portfolioData).join(', ')}</p>
+          <p><strong>Proyectos destacados:</strong> ${window.projects.filter(p => p.featured).length}</p>
+        `;
+        
+        // Renderizar proyectos destacados
+        const featured = window.projects.filter(p => p.featured);
+        featuredProjects.innerHTML = `
+          <h3>Proyectos destacados (${featured.length})</h3>
+          ${featured.map(project => `
+            <div class="project-card">
+              <div class="project-image">
+                <img src="${project.image}" alt="${project.title.en}" style="max-width: 100%; max-height: 100%;">
+              </div>
+              <h4>${project.title.en}</h4>
+              <p>${project.description.en}</p>
+              <div>
+                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+              </div>
+              <div>
+                ${project.links.website ? `<a href="${project.links.website}" target="_blank" class="btn">Website</a>` : ''}
+                ${project.links.github ? `<a href="${project.links.github}" target="_blank" class="btn btn--outline">GitHub</a>` : ''}
+                ${project.links.deploy ? `<a href="${project.links.deploy}" target="_blank" class="btn">Live Demo</a>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        `;
+        
+        // Renderizar todos los proyectos
+        allProjects.innerHTML = `
+          <h3>Todos los proyectos (${window.projects.length})</h3>
+          ${window.projects.map(project => `
+            <div class="project-card">
+              <div class="project-image">
+                <img src="${project.image}" alt="${project.title.en}" style="max-width: 100%; max-height: 100%;">
+              </div>
+              <h4>${project.title.en} ${project.featured ? '⭐' : ''}</h4>
+              <p>${project.description.en}</p>
+              <div>
+                ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+              </div>
+              <div>
+                ${project.links.website ? `<a href="${project.links.website}" target="_blank" class="btn">Website</a>` : ''}
+                ${project.links.github ? `<a href="${project.links.github}" target="_blank" class="btn btn--outline">GitHub</a>` : ''}
+                ${project.links.deploy ? `<a href="${project.links.deploy}" target="_blank" class="btn">Live Demo</a>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        `;
+        
+        console.log('✅ Debug completado exitosamente');
+        
+      } else {
+        loadStatus.innerHTML = '<strong style="color: red;">❌ Error: Los datos no están disponibles</strong>';
+        dataStatus.innerHTML = `
+          <p>portfolioData: ${window.portfolioData ? 'Sí' : 'No'}</p>
+          <p>projects: ${window.projects ? 'Sí' : 'No'}</p>
+        `;
+        console.error('❌ Datos no disponibles');
+      }
+    });
+  </script>
+</body>
+</html>
+

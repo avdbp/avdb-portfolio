@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Test - Rocket Media</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test-box { border: 2px solid #ccc; padding: 20px; margin: 20px 0; }
+    .success { border-color: green; background: #f0fff0; }
+    .error { border-color: red; background: #fff0f0; }
+  </style>
+</head>
+<body>
+  <h1>🔍 Test Simple - Rocket Media Portfolio</h1>
+  
+  <div class="test-box" id="basic-js">
+    <h3>Test JavaScript Básico</h3>
+    <p>Estado: <span id="js-status">Verificando...</span></p>
+  </div>
+  
+  <div class="test-box" id="data-load">
+    <h3>Test Carga de Datos</h3>
+    <p>Estado: <span id="data-status">Verificando...</span></p>
+    <div id="data-details"></div>
+  </div>
+  
+  <div class="test-box" id="dom-test">
+    <h3>Test DOM</h3>
+    <p>Estado: <span id="dom-status">Verificando...</span></p>
+    <div id="dom-details"></div>
+  </div>
+
+  <script>
+    console.log('=== SIMPLE TEST INICIADO ===');
+    
+    // Test 1: JavaScript básico funciona
+    const jsStatus = document.getElementById('js-status');
+    const jsBox = document.getElementById('basic-js');
+    
+    try {
+      jsStatus.textContent = '✅ JavaScript funciona';
+      jsBox.classList.add('success');
+      console.log('✅ JavaScript básico funciona');
+    } catch (error) {
+      jsStatus.textContent = '❌ Error en JavaScript: ' + error.message;
+      jsBox.classList.add('error');
+      console.error('❌ Error en JavaScript:', error);
+    }
+    
+    // Test 2: Cargar datos del portafolio
+    const dataStatus = document.getElementById('data-status');
+    const dataBox = document.getElementById('data-load');
+    const dataDetails = document.getElementById('data-details');
+    
+    // Intentar cargar portfolio-data.js
+    const script = document.createElement('script');
+    script.src = '/assets/portfolio-data.js';
+    script.onload = function() {
+      console.log('✅ portfolio-data.js cargado');
+      
+      setTimeout(() => {
+        if (window.portfolioData && window.projects) {
+          dataStatus.textContent = '✅ Datos cargados correctamente';
+          dataBox.classList.add('success');
+          
+          dataDetails.innerHTML = `
+            <p><strong>Total de proyectos:</strong> ${window.projects.length}</p>
+            <p><strong>Idiomas disponibles:</strong> ${Object.keys(window.portfolioData).join(', ')}</p>
+            <p><strong>Proyectos destacados:</strong> ${window.projects.filter(p => p.featured).length}</p>
+          `;
+          
+          console.log('✅ Datos del portafolio disponibles');
+        } else {
+          dataStatus.textContent = '❌ Datos no disponibles';
+          dataBox.classList.add('error');
+          dataDetails.innerHTML = `
+            <p>portfolioData: ${window.portfolioData ? 'Sí' : 'No'}</p>
+            <p>projects: ${window.projects ? 'Sí' : 'No'}</p>
+          `;
+          console.error('❌ Datos del portafolio no disponibles');
+        }
+      }, 100);
+      
+    };
+    script.onerror = function() {
+      dataStatus.textContent = '❌ Error cargando portfolio-data.js';
+      dataBox.classList.add('error');
+      console.error('❌ Error cargando portfolio-data.js');
+    };
+    
+    document.head.appendChild(script);
+    
+    // Test 3: DOM funciona
+    const domStatus = document.getElementById('dom-status');
+    const domBox = document.getElementById('dom-test');
+    const domDetails = document.getElementById('dom-details');
+    
+    try {
+      const testElement = document.createElement('div');
+      testElement.textContent = 'Elemento de prueba creado';
+      document.body.appendChild(testElement);
+      
+      domStatus.textContent = '✅ DOM funciona correctamente';
+      domBox.classList.add('success');
+      domDetails.innerHTML = `
+        <p>✅ Elementos DOM creados</p>
+        <p>✅ getElementById funciona</p>
+        <p>✅ innerHTML funciona</p>
+      `;
+      
+      // Limpiar elemento de prueba
+      document.body.removeChild(testElement);
+      
+      console.log('✅ DOM funciona correctamente');
+    } catch (error) {
+      domStatus.textContent = '❌ Error en DOM: ' + error.message;
+      domBox.classList.add('error');
+      console.error('❌ Error en DOM:', error);
+    }
+    
+    console.log('=== SIMPLE TEST COMPLETADO ===');
+  </script>
+</body>
+</html>

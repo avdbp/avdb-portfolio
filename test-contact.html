@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form</title>
+</head>
+<body>
+    <h1>Test Contact Form</h1>
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+
+    
+    <!-- Contact Form Script -->
+    <script src="assets/contact-form.js"></script>
+    
+    <!-- Test Form -->
+    <form id="contact-form">
+        <input type="text" id="name" name="name" value="Test User" required>
+        <input type="email" id="email" name="email" value="test@example.com" required>
+
+        <textarea id="message" name="message" required>Test message</textarea>
+        <button type="submit">Send Test</button>
+    </form>
+    
+    <div id="status"></div>
+    
+    <script>
+        console.log('=== TEST PAGE LOADED ===');
+        console.log('EmailJS available:', typeof emailjs !== 'undefined');
+        console.log('Window.ENV:', window.ENV);
+        console.log('Window.EMAILJS_CONFIG:', window.EMAILJS_CONFIG);
+        
+        // Test form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            console.log('Form submitted');
+            
+            // Test EmailJS directly
+            if (typeof emailjs !== 'undefined') {
+                console.log('EmailJS is available, testing...');
+                
+                // Initialize with hardcoded values for testing
+                emailjs.init("ppTI8ZSqq8q1h-z52");
+                
+                const templateParams = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+                
+                console.log('Sending with params:', templateParams);
+                
+                emailjs.send("service_pshogy5", "template_l0nr1y7", templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS:', response);
+                        document.getElementById('status').innerHTML = '<p style="color: green;">SUCCESS: ' + response.status + '</p>';
+                    }, function(error) {
+                        console.log('FAILED:', error);
+                        document.getElementById('status').innerHTML = '<p style="color: red;">FAILED: ' + error.text + '</p>';
+                    });
+            } else {
+                console.log('EmailJS not available');
+                document.getElementById('status').innerHTML = '<p style="color: red;">EmailJS not loaded</p>';
+            }
+        });
+    </script>
+</body>
+</html>

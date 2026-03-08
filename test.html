@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test - Rocket Media Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+    .project { margin: 10px 0; padding: 10px; background: #f5f5f5; }
+  </style>
+</head>
+<body>
+  <h1>Test - Rocket Media Portfolio</h1>
+  
+  <div class="test-section">
+    <h2>Verificación de datos</h2>
+    <div id="data-status">Verificando...</div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Proyectos disponibles</h2>
+    <div id="projects-list">Cargando...</div>
+  </div>
+  
+  <div class="test-section">
+    <h2>Datos del portafolio</h2>
+    <div id="portfolio-data">Cargando...</div>
+  </div>
+
+  <script src="/assets/portfolio-data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Test page loaded');
+      
+      // Verificar datos
+      const dataStatus = document.getElementById('data-status');
+      const projectsList = document.getElementById('projects-list');
+      const portfolioData = document.getElementById('portfolio-data');
+      
+      if (window.portfolioData && window.projects) {
+        dataStatus.innerHTML = '<strong style="color: green;">✅ Datos cargados correctamente</strong>';
+        
+        // Mostrar proyectos
+        projectsList.innerHTML = `
+          <p><strong>Total de proyectos:</strong> ${window.projects.length}</p>
+          <p><strong>Proyectos destacados:</strong> ${window.projects.filter(p => p.featured).length}</p>
+          <div>
+            ${window.projects.map(project => `
+              <div class="project">
+                <h3>${project.title.en}</h3>
+                <p><strong>ID:</strong> ${project.id}</p>
+                <p><strong>Featured:</strong> ${project.featured ? 'Sí' : 'No'}</p>
+                <p><strong>Tags:</strong> ${project.tags.join(', ')}</p>
+              </div>
+            `).join('')}
+          </div>
+        `;
+        
+        // Mostrar datos del portafolio
+        portfolioData.innerHTML = `
+          <p><strong>Idiomas disponibles:</strong> ${Object.keys(window.portfolioData).join(', ')}</p>
+          <p><strong>Navegación EN:</strong> ${Object.values(window.portfolioData.en.nav).join(', ')}</p>
+          <p><strong>Navegación ES:</strong> ${Object.values(window.portfolioData.es.nav).join(', ')}</p>
+        `;
+        
+      } else {
+        dataStatus.innerHTML = '<strong style="color: red;">❌ Error: Los datos no están disponibles</strong>';
+        projectsList.innerHTML = '<p style="color: red;">No se pudieron cargar los proyectos</p>';
+        portfolioData.innerHTML = '<p style="color: red;">No se pudieron cargar los datos del portafolio</p>';
+      }
+    });
+  </script>
+</body>
+</html>

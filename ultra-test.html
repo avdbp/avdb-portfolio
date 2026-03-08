@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultra Test - Rocket Media</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .test { border: 2px solid #333; padding: 20px; margin: 20px 0; }
+    .success { border-color: green; background: #f0fff0; }
+    .error { border-color: red; background: #fff0f0; }
+    .warning { border-color: orange; background: #fff8f0; }
+  </style>
+</head>
+<body>
+  <h1>🧪 Ultra Test - Rocket Media</h1>
+  
+  <div class="test" id="data-test">
+    <h3>Test 1: Carga de datos</h3>
+    <p>Estado: <span id="data-status">Verificando...</span></p>
+    <div id="data-details"></div>
+  </div>
+  
+  <div class="test" id="render-test">
+    <h3>Test 2: Renderizado de proyectos</h3>
+    <p>Estado: <span id="render-status">Verificando...</span></p>
+    <div id="render-details"></div>
+  </div>
+  
+  <div class="test" id="projects-display">
+    <h3>Test 3: Proyectos mostrados</h3>
+    <div id="projects-container">Cargando...</div>
+  </div>
+
+  <script>
+    console.log('=== ULTRA TEST INICIADO ===');
+    
+    // Test 1: Verificar datos
+    function testData() {
+      const dataStatus = document.getElementById('data-status');
+      const dataDetails = document.getElementById('data-details');
+      const dataTest = document.getElementById('data-test');
+      
+      if (window.portfolioData && window.projects) {
+        dataStatus.textContent = '✅ Datos disponibles';
+        dataTest.classList.add('success');
+        
+        dataDetails.innerHTML = `
+          <p><strong>portfolioData:</strong> ${Object.keys(window.portfolioData).length} idiomas</p>
+          <p><strong>projects:</strong> ${window.projects.length} proyectos</p>
+          <p><strong>Featured:</strong> ${window.projects.filter(p => p.featured).length} proyectos destacados</p>
+        `;
+        
+        console.log('✅ Datos cargados correctamente');
+        return true;
+      } else {
+        dataStatus.textContent = '❌ Datos no disponibles';
+        dataTest.classList.add('error');
+        
+        dataDetails.innerHTML = `
+          <p>portfolioData: ${window.portfolioData ? 'Sí' : 'No'}</p>
+          <p>projects: ${window.projects ? 'Sí' : 'No'}</p>
+        `;
+        
+        console.error('❌ Datos no disponibles');
+        return false;
+      }
+    }
+    
+    // Test 2: Verificar renderizado
+    function testRender() {
+      const renderStatus = document.getElementById('render-status');
+      const renderDetails = document.getElementById('render-details');
+      const renderTest = document.getElementById('render-test');
+      
+      try {
+        const container = document.getElementById('projects-container');
+        if (!container) {
+          renderStatus.textContent = '❌ Container no encontrado';
+          renderTest.classList.add('error');
+          return false;
+        }
+        
+        // Intentar renderizar proyectos
+        const featuredProjects = window.projects.filter(p => p.featured);
+        if (featuredProjects.length === 0) {
+          renderStatus.textContent = '⚠️ No hay proyectos destacados';
+          renderTest.classList.add('warning');
+          renderDetails.innerHTML = '<p>No se encontraron proyectos con featured: true</p>';
+          return false;
+        }
+        
+        const html = featuredProjects.map(project => `
+          <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px;">
+            <h4>${project.title.en}</h4>
+            <p>${project.description.en}</p>
+            <p><strong>Tags:</strong> ${project.tags.join(', ')}</p>
+            <p><strong>Featured:</strong> ${project.featured ? 'Sí' : 'No'}</p>
+          </div>
+        `).join('');
+        
+        container.innerHTML = html;
+        
+        renderStatus.textContent = '✅ Proyectos renderizados';
+        renderTest.classList.add('success');
+        renderDetails.innerHTML = `<p>Se renderizaron ${featuredProjects.length} proyectos destacados</p>`;
+        
+        console.log('✅ Renderizado exitoso');
+        return true;
+        
+      } catch (error) {
+        renderStatus.textContent = '❌ Error en renderizado';
+        renderTest.classList.add('error');
+        renderDetails.innerHTML = `<p>Error: ${error.message}</p>`;
+        console.error('❌ Error en renderizado:', error);
+        return false;
+      }
+    }
+    
+    // Ejecutar tests
+    function runTests() {
+      console.log('Ejecutando tests...');
+      
+      // Test 1: Datos
+      const dataOk = testData();
+      
+      if (dataOk) {
+        // Test 2: Renderizado
+        setTimeout(() => {
+          testRender();
+        }, 100);
+      }
+    }
+    
+    // Esperar a que se carguen los datos
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    function waitForData() {
+      attempts++;
+      console.log(`Intento ${attempts} de ${maxAttempts}`);
+      
+      if (window.portfolioData && window.projects) {
+        console.log('Datos disponibles, ejecutando tests...');
+        runTests();
+      } else if (attempts < maxAttempts) {
+        console.log('Datos no disponibles, esperando...');
+        setTimeout(waitForData, 200);
+      } else {
+        console.error('Timeout: Los datos no se cargaron después de 2 segundos');
+        document.getElementById('data-status').textContent = '❌ Timeout - Datos no cargados';
+        document.getElementById('data-test').classList.add('error');
+      }
+    }
+    
+    // Iniciar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOM listo, esperando datos...');
+      waitForData();
+    });
+    
+    console.log('=== ULTRA TEST CONFIGURADO ===');
+  </script>
+  
+  <!-- Cargar datos del portafolio -->
+  <script src="/assets/portfolio-data.js"></script>
+</body>
+</html>
+
