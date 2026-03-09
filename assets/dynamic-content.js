@@ -170,7 +170,7 @@ const portfolioData = {
       role: "Full Stack Developer",
       bio: "Full-stack developer with 5+ years of experience in modern web technologies. I specialize in React.js, Node.js, and cloud deployment. I'm passionate about building fast, maintainable applications and collaborating with teams.",
       image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773028976/rocketMedia/sustitution-webp/avdb_wa2qos.webp",
-      skills: ["React.js", "Node.js", "MongoDB", "HTML", "CSS", "JavaScript", "Git", "Vercel", "Netlify"]
+      skills: ["React.js", "Node.js", "MongoDB", "HTML", "CSS", "JavaScript", "Git", "Vercel", "WordPress", "Elementor", "AI"]
     }
   ],
   
