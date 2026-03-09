@@ -709,6 +709,10 @@ button[class*="burger"] {
   grid-column: span 2;
 }
 /* Cards de app: 3 columnas del grid = 2 por fila */
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
 .project-card--wide {
   grid-column: span 3;
   display: flex;
@@ -718,30 +722,79 @@ button[class*="burger"] {
 }
 .project-card--wide .project-card--wide__image img {
   background-color: #141414;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   width: 100%;
   height: 100%;
 }
+/* Cards normales: imagen 1012.47×522.11px, sin espacios */
 .project-image {
-  background: #141414;
+  position: relative;
   overflow: hidden;
+  background: #141414;
+  border-radius: 12px 12px 0 0;
+  aspect-ratio: 1012.47 / 522.11;
+  width: 100%;
+  line-height: 0;
 }
-.project-image img { width: 100%; height: auto; display: block; object-fit: cover; }
-.project-content { padding: 1.5rem; }
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  vertical-align: bottom;
+  transition: transform 0.3s ease;
+}
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+/* Título: 1–2 líneas fijas, alineadas entre cards (como rocketmedia) */
 .project-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
+  line-height: 1.35;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  min-height: 2.7em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+/* Descripción: espacio fijo ~4 líneas, alineado entre cards */
 .project-description {
   font-family: var(--font-body);
-  color: var(--text-secondary);
   font-size: 0.9rem;
-  margin-bottom: 1rem;
   line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  min-height: 6.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-.project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.project-description a {
+  color: inherit;
+  text-decoration: underline;
+}
+/* Zona chips: altura fija para alineación */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  min-height: 2.25rem;
+  align-content: flex-start;
+}
 .tag {
   background: rgba(245,158,11,0.1);
   color: var(--accent-text);
@@ -751,8 +804,21 @@ button[class*="burger"] {
   border-radius: 6px;
   border: 1px solid var(--border-accent);
 }
-.project-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-.project-links .btn-primary, .project-links .btn-secondary { font-size: 0.85rem; padding: 8px 16px; }
+/* Botones uno debajo del otro y pegados al fondo de la card (como rocketmedia) */
+.project-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.project-links .btn-primary,
+.project-links .btn-secondary {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+}
 .featured-badge {
   position: absolute;
   top: 1rem;
@@ -765,24 +831,71 @@ button[class*="burger"] {
   font-weight: 600;
 }
 
-/* Project card wide - apps horizontales */
-/* Imagen reducida: ancho fijo 140px */
+/* Project card wide - apps horizontales (como rocketmedia) */
 .project-card--wide .project-card--wide__image {
   flex: 0 0 140px;
   width: 140px;
   min-width: 140px;
   max-width: 140px;
   min-height: 100px;
+  padding: 0.75rem;
+  box-sizing: border-box;
   overflow: hidden;
   background: #141414;
+  border-radius: 12px 0 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .project-card--wide .project-card--wide__image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
   object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+  border-radius: 4px;
 }
-.project-card--wide .project-content { flex: 1; padding: 2rem; }
+.project-card--wide:hover .project-card--wide__image img {
+  transform: scale(1.03);
+}
+.project-card--wide .project-content {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+/* Apps (wide): sin zonas fijas ni botones apilados */
+.project-card--wide .project-title {
+  min-height: unset;
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+}
+.project-card--wide .project-description {
+  min-height: unset;
+  -webkit-line-clamp: unset;
+  display: block;
+  overflow: visible;
+}
+.project-card--wide .project-tags {
+  min-height: unset;
+}
+.project-card--wide .project-links {
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0;
+  gap: 0.75rem;
+}
+.project-card--wide .project-links .btn-primary,
+.project-card--wide .project-links .btn-secondary {
+  flex: 1;
+  min-width: 120px;
+  width: auto;
+}
 
 /* ========== ABOUT ========== */
 .team, .process, .skills-section {

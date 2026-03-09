@@ -4,7 +4,7 @@ const portfolioData = {
     {
       title: "305 Expo",
       description: "A Miami-based consortium of specialized companies delivering complete solutions in visual communication, exhibits, and commercial environments. 305 Expo integrates every stage in-house for unmatched efficiency and consistency.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1767645677/rocketMedia/305Expo-web_f5z3ag.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/305_wvvzad.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
       link: "https://305expo.com/",
       repo: null,
@@ -44,7 +44,7 @@ const portfolioData = {
     {
       title: "SalesScoreKeeper",
       description: "Web application for sales and commission tracking. Complete commercial management system with metrics and reports. Design by <a href='https://estefanialombardo.com/' target='_blank' rel='noopener noreferrer'>Estefania Lombardo</a>, development by me.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756753904/rocketMedia/010_-_Captura_yc1qws.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024893/rocketMedia/sustitution-webp/ssk_wbfiab.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
       link: "https://salesscorekeeper.com/",
       repo: null,
@@ -54,7 +54,7 @@ const portfolioData = {
     {
       title: "Precision Property Management",
       description: "Complete website for property management in Florida. Professional design and full-stack development with focus on user experience and real estate management functionalities.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756752497/rocketMedia/006_-_Captura_xlvxfb.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773025492/rocketMedia/sustitution-webp/precision_x08aoc.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
       link: "https://ppmfla.com/",
       repo: null,
@@ -84,7 +84,7 @@ const portfolioData = {
     {
       title: "Floristería Emmy Sants",
       description: "Complete e-commerce for flower shop. Full-stack development with order system, inventory management and payment gateway. Collaboration with Ana Gabriela Medina.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756753367/rocketMedia/009_-_Captura_n9u52n.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773025489/rocketMedia/sustitution-webp/emmy_fr3iu7.webp",
       technologies: ["React.js", "Node.js", "Express", "MongoDB", "AI"],
       link: "https://floristeriaemmysants.netlify.app/",
       repo: "https://github.com/avdbp/frontend-emmy-sants",
@@ -94,7 +94,7 @@ const portfolioData = {
     {
       title: "Volta Coffee",
       description: "<strong>CMS demo</strong> for a specialty coffee roastery in Barcelona. Single origin, small batch. Try the admin panel: click the gear icon at the bottom, then log in with user <strong>admin</strong> and password <strong>volta2024</strong>.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1772553836/rocketMedia/volta_hbck0x.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/volta_xsz4dj.webp",
       technologies: ["React.js", "CMS", "Vercel"],
       link: "https://volta-theta.vercel.app/",
       repo: null,
@@ -104,9 +104,29 @@ const portfolioData = {
     {
       title: "La Wash Londres 81",
       description: "Website for laundry and dry cleaning services in Barcelona. Elegant and functional design with online booking system and service information.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1771958059/rocketMedia/captura-web_qppq4n.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773025489/rocketMedia/sustitution-webp/lawash_ol9asv.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
       link: "https://lawash-londresbcn.es/",
+      repo: null,
+      featured: false,
+      categories: ["website"]
+    },
+    {
+      title: "Metro X USA",
+      description: "Web platform for transportation and logistics company. Modern and responsive design with tracking and service management functionalities.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773025490/rocketMedia/sustitution-webp/metrox_wnpbk8.webp",
+      technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
+      link: "https://metroxusa.com/",
+      repo: null,
+      featured: false,
+      categories: ["website"]
+    },
+    {
+      title: "Woodrock Design",
+      description: "Custom wood and stone interiors website for kitchens, bathrooms, closets, and more. Tailored designs crafted to elevate lifestyle with natural elegance.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773025491/rocketMedia/sustitution-webp/wr_udrcda.webp",
+      technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
+      link: "https://woodrockusa.com/",
       repo: null,
       featured: false,
       categories: ["website"]
@@ -124,22 +144,12 @@ const portfolioData = {
     {
       title: "SSK Mail Signature",
       description: "Professional email signature template for SSK team members. Design by <a href='https://estefanialombardo.com/' target='_blank' rel='noopener noreferrer'>Estefania Lombardo</a>, development by me.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756758550/rocketMedia/010_-_Captura_copy_2_yv7xpq.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773027497/rocketMedia/sustitution-webp/firmaAlex_cbu1z5.webp",
       technologies: ["HTML5", "CSS3", "Email Marketing", "Responsive Design"],
       link: "https://mail-signature-demo-uxys.vercel.app/",
       repo: "https://github.com/avdbp/mail-signature-demo",
       featured: false,
       categories: ["other"]
-    },
-    {
-      title: "Metro X USA",
-      description: "Web platform for transportation and logistics company. Modern and responsive design with tracking and service management functionalities.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756752497/rocketMedia/005_-_Captura_vzcupe.webp",
-      technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
-      link: "https://metroxusa.com/",
-      repo: null,
-      featured: false,
-      categories: ["website"]
     },
     {
       title: "Restoration Maintenance Email Template",
@@ -150,16 +160,6 @@ const portfolioData = {
       repo: "https://github.com/avdbp/restomain-email",
       featured: false,
       categories: ["other"]
-    },
-    {
-      title: "Woodrock Design",
-      description: "Custom wood and stone interiors website for kitchens, bathrooms, closets, and more. Tailored designs crafted to elevate lifestyle with natural elegance.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1761327763/rocketMedia/004_-_Captura_ftiq0y.png",
-      technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
-      link: "https://woodrockusa.com/",
-      repo: null,
-      featured: false,
-      categories: ["website"]
     }
     
   ],
