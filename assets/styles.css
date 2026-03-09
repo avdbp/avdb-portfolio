@@ -980,6 +980,9 @@ button[class*="burger"] {
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .process-step {
   flex: 0 0 260px;
@@ -1018,9 +1021,12 @@ button[class*="burger"] {
   justify-content: center;
   gap: 1.5rem;
   margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .skill-item {
-  flex: 0 0 200px;
+  flex: 0 0 260px;
   text-align: center;
 }
 .skill-icon { margin-bottom: 0.75rem; color: var(--accent); }
@@ -1204,6 +1210,10 @@ button[class*="burger"] {
   .footer__menu { justify-content: center; }
   
   .team__grid { grid-template-columns: 1fr; }
+  .process__grid { max-width: 500px; }
+  .process-step { flex: 0 0 100%; }
+  .skills__grid { max-width: 600px; }
+  .skill-item { flex: 0 0 calc(50% - 0.75rem); }
   .team-member {
     grid-template-columns: 1fr;
   }
@@ -1237,6 +1247,7 @@ button[class*="burger"] {
   .hero-title { font-size: 2.5rem; }
   .hero-actions { flex-direction: column; }
   .btn-primary, .btn-secondary, .btn-ghost { width: 100%; text-align: center; }
+  .skill-item { flex: 0 0 100%; }
 }
 
 /* ========== ERROR PAGES ========== */
