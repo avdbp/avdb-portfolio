@@ -14,7 +14,7 @@ const portfolioData = {
     {
       title: "Explorer Tours Bonaire",
       description: "Website for guided island tours in Bonaire. Relaxed, small-group experiences showcasing the island's natural beauty, history, and culture.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1767085216/rocketMedia/010_-_Captura_qiwfwc.webp",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773028402/rocketMedia/sustitution-webp/etb_suoxgd.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
       link: "https://etbonaire.com/",
       repo: null,
