@@ -340,11 +340,15 @@ button[class*="burger"] {
   font-size: 0.75rem;
   color: #525252;
 }
-.hero-card-body {
-  padding: 20px;
-  flex: 1;
-  min-height: 0;
+.hero-card-body,
+#hero-code-body {
+  height: 260px;
+  min-height: 260px;
+  max-height: 260px;
   overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px;
 }
 .code-line {
   font-family: var(--font-mono);
