@@ -1,12 +1,12 @@
-// Portfolio Data
+// Portfolio Data (orden igual que rocketmedia.website)
 const portfolioData = {
   projects: [
     {
-      title: "305 Expo",
-      description: "A Miami-based consortium of specialized companies delivering complete solutions in visual communication, exhibits, and commercial environments. 305 Expo integrates every stage in-house for unmatched efficiency and consistency.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/305_wvvzad.webp",
+      title: "SalesScoreKeeper",
+      description: "Web application for sales and commission tracking. Complete commercial management system with metrics and reports. Design by <a href='https://estefanialombardo.com/' target='_blank' rel='noopener noreferrer'>Estefania Lombardo</a>, development by me.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024893/rocketMedia/sustitution-webp/ssk_wbfiab.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
-      link: "https://305expo.com/",
+      link: "https://salesscorekeeper.com/",
       repo: null,
       featured: true,
       categories: ["website"]
@@ -22,33 +22,23 @@ const portfolioData = {
       categories: ["website"]
     },
     {
-      title: "MindCare AI App",
-      description: "MindCare AI is an emotional wellness web app combining mood tracking, mindfulness activities, and an AI assistant with a therapeutic approach to support daily mental health.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1772389001/rocketMedia/app_mzi3nh.webp",
-      technologies: ["React.js", "AI", "Vercel"],
-      link: "https://mind-care-ai-one.vercel.app/",
+      title: "Floristería Roquetes",
+      description: "E-commerce demo for a flower shop (flowers and plants). Uses AI to describe each plant's characteristics and care tips—try it on the Ficus product page.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773409924/rocketMedia/sustitution-webp/floristeria_jjk1jr.webp",
+      technologies: ["React.js", "E-commerce", "AI", "Vercel"],
+      link: "https://e-commerce-demo-eight-gold.vercel.app/",
       repo: null,
       featured: true,
-      wideCard: true,
-      categories: ["app", "fullstack"]
+      categories: ["website", "fullstack"]
     },
-    // {
-    //   title: "InspireAI",
-    //   description: "AI-powered Salesforce solutions for modern enterprises. Design by <a href='https://estefanialombardo.com/' target='_blank' rel='noopener noreferrer'>Estefania Lombardo</a> and development by Rocketmedia.",
-    //   image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756755663/rocketMedia/010_-_Captura_copy_ozjdbp.webp",
-    //   technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
-    //   link: "https://inspireai.com/",
-    //   repo: null,
-    //   featured: true
-    // },
     {
-      title: "SalesScoreKeeper",
-      description: "Web application for sales and commission tracking. Complete commercial management system with metrics and reports. Design by <a href='https://estefanialombardo.com/' target='_blank' rel='noopener noreferrer'>Estefania Lombardo</a>, development by me.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024893/rocketMedia/sustitution-webp/ssk_wbfiab.webp",
+      title: "305 Expo",
+      description: "A Miami-based consortium of specialized companies delivering complete solutions in visual communication, exhibits, and commercial environments. 305 Expo integrates every stage in-house for unmatched efficiency and consistency.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/305_wvvzad.webp",
       technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
-      link: "https://salesscorekeeper.com/",
+      link: "https://305expo.com/",
       repo: null,
-      featured: false,
+      featured: true,
       categories: ["website"]
     },
     {
@@ -62,6 +52,27 @@ const portfolioData = {
       categories: ["website"]
     },
     {
+      title: "Volta Coffee",
+      description: "<strong>CMS demo</strong> for a specialty coffee roastery in Barcelona. Single origin, small batch. Try the admin panel: click the gear icon at the bottom, then log in with user <strong>admin</strong> and password <strong>volta2024</strong>.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/volta_xsz4dj.webp",
+      technologies: ["React.js", "CMS", "Vercel"],
+      link: "https://volta-theta.vercel.app/",
+      repo: null,
+      featured: false,
+      categories: ["website", "fullstack"]
+    },
+    {
+      title: "MindCare AI App",
+      description: "MindCare AI is an emotional wellness web app combining mood tracking, mindfulness activities, and an AI assistant with a therapeutic approach to support daily mental health.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1772389001/rocketMedia/app_mzi3nh.webp",
+      technologies: ["React.js", "AI", "Vercel"],
+      link: "https://mind-care-ai-one.vercel.app/",
+      repo: null,
+      featured: true,
+      wideCard: true,
+      categories: ["app", "fullstack"]
+    },
+    {
       title: "Roi Calculator App",
       description: "Web application for calculating return on investment. Intuitive interface with interactive charts and advanced financial calculations.",
       image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1772424988/rocketMedia/roi_d4rg89.webp",
@@ -71,35 +82,6 @@ const portfolioData = {
       featured: false,
       wideCard: true,
       categories: ["app", "fullstack"]
-    },
-    // {
-    //   title: "VMA Immigration",
-    //   description: "Website for immigration services. Informative platform with contact forms and resources for immigration procedures.",
-    //   image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1756752497/rocketMedia/008_-_Captura_ogknrk.webp",
-    //   technologies: ["React.js", "CSS3", "JavaScript"],
-    //   link: "https://inmmigration-dv2dp9ppz-alejandros-projects-75565a5d.vercel.app/",
-    //   repo: "https://github.com/avdbp/inmmigration-vma",
-    //   featured: false
-    // },
-    {
-      title: "Floristería Emmy Sants",
-      description: "Complete e-commerce for flower shop. Full-stack development with order system, inventory management and payment gateway. Collaboration with Ana Gabriela Medina.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773025489/rocketMedia/sustitution-webp/emmy_fr3iu7.webp",
-      technologies: ["React.js", "Node.js", "Express", "MongoDB", "AI"],
-      link: "https://floristeriaemmysants.netlify.app/",
-      repo: "https://github.com/avdbp/frontend-emmy-sants",
-      featured: true,
-      categories: ["website", "fullstack"]
-    },
-    {
-      title: "Volta Coffee",
-      description: "<strong>CMS demo</strong> for a specialty coffee roastery in Barcelona. Single origin, small batch. Try the admin panel: click the gear icon at the bottom, then log in with user <strong>admin</strong> and password <strong>volta2024</strong>.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/volta_xsz4dj.webp",
-      technologies: ["React.js", "CMS", "Vercel"],
-      link: "https://volta-theta.vercel.app/",
-      repo: null,
-      featured: false,
-      categories: ["website", "fullstack"]
     },
     {
       title: "La Wash Londres 81",
@@ -161,7 +143,6 @@ const portfolioData = {
       featured: false,
       categories: ["other"]
     }
-    
   ],
   
   team: [
