@@ -23,7 +23,7 @@ const portfolioData = {
     },
     {
       title: "Floristería Roquetes",
-      description: "E-commerce demo for a flower shop (flowers and plants). Uses AI to describe each plant's characteristics and care tips—try it on the Ficus product page.",
+      description: "<strong>E-commerce demo</strong> for a flower shop (flowers and plants). Uses AI to describe each plant's characteristics and care tips—try it on the Ficus product page.",
       image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773409924/rocketMedia/sustitution-webp/floristeria_jjk1jr.webp",
       technologies: ["React.js", "E-commerce", "AI", "Vercel"],
       link: "https://e-commerce-demo-eight-gold.vercel.app/",
@@ -53,7 +53,7 @@ const portfolioData = {
     },
     {
       title: "Volta Coffee",
-      description: "<strong>CMS demo</strong> for a specialty coffee roastery in Barcelona. Single origin, small batch. Try the admin panel: click the gear icon at the bottom, then log in with user <strong>admin</strong> and password <strong>volta2024</strong>.",
+      description: "<strong>CMS demo</strong> for a specialty coffee roastery in Barcelona. Try the admin panel: click the gear icon at the bottom, then log in with user <strong>admin</strong> and password <strong>volta2024</strong>.",
       image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/volta_xsz4dj.webp",
       technologies: ["React.js", "CMS", "Vercel"],
       link: "https://volta-theta.vercel.app/",
