@@ -62,6 +62,26 @@ const portfolioData = {
       categories: ["website", "fullstack"]
     },
     {
+      title: "Lead Form Demo",
+      description: "<strong>Lead generation demo</strong> to capture contact and business details, and instantly create a branded lead card ready for CRM workflows.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1777980129/rocketMedia/sustitution-webp/demo-form_qnwesq.png",
+      technologies: ["HTML5", "Lead Generation", "PDF"],
+      link: "https://demo-lead-form.vercel.app/",
+      repo: null,
+      featured: false,
+      categories: ["website", "app", "fullstack"]
+    },
+    {
+      title: "Image Converter App",
+      description: "<strong>Image converter app</strong> to convert files between WebP, PNG, and JPG with quality controls, renaming tools, and resizing options.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1777981251/rocketMedia/sustitution-webp/converter-imgs_qzf436.webp",
+      technologies: ["HTML5", "Image Conversion", "WebP", "PNG", "JPG"],
+      link: "https://img-converter-app-24vj.vercel.app/",
+      repo: null,
+      featured: false,
+      categories: ["website", "app"]
+    },
+    {
       title: "MindCare AI App",
       description: "MindCare AI is an emotional wellness web app combining mood tracking, mindfulness activities, and an AI assistant with a therapeutic approach to support daily mental health.",
       image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1772389001/rocketMedia/app_mzi3nh.webp",
