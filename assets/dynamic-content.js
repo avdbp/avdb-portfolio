@@ -69,7 +69,7 @@ const portfolioData = {
       link: "https://demo-lead-form.vercel.app/",
       repo: null,
       featured: false,
-      categories: ["website", "app", "fullstack"]
+      categories: ["other"]
     },
     {
       title: "Image Converter App",
@@ -79,7 +79,7 @@ const portfolioData = {
       link: "https://img-converter-app-24vj.vercel.app/",
       repo: null,
       featured: false,
-      categories: ["website", "app"]
+      categories: ["other"]
     },
     {
       title: "MindCare AI App",
