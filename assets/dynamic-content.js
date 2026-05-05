@@ -2,6 +2,16 @@
 const portfolioData = {
   projects: [
     {
+      title: "305 Expo",
+      description: "A Miami-based consortium of specialized companies delivering complete solutions in visual communication, exhibits, and commercial environments. 305 Expo integrates every stage in-house for unmatched efficiency and consistency.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/305_wvvzad.webp",
+      technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
+      link: "https://305expo.com/",
+      repo: null,
+      featured: true,
+      categories: ["website"]
+    },
+    {
       title: "SalesScoreKeeper",
       description: "Web application for sales and commission tracking. Complete commercial management system with metrics and reports. Design by <a href='https://estefanialombardo.com/' target='_blank' rel='noopener noreferrer'>Estefania Lombardo</a>, development by me.",
       image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024893/rocketMedia/sustitution-webp/ssk_wbfiab.webp",
@@ -32,11 +42,11 @@ const portfolioData = {
       categories: ["website", "fullstack"]
     },
     {
-      title: "305 Expo",
-      description: "A Miami-based consortium of specialized companies delivering complete solutions in visual communication, exhibits, and commercial environments. 305 Expo integrates every stage in-house for unmatched efficiency and consistency.",
-      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1773024596/rocketMedia/sustitution-webp/305_wvvzad.webp",
-      technologies: ["WordPress", "HTML5", "CSS3", "JavaScript"],
-      link: "https://305expo.com/",
+      title: "Rocket Media Portfolio",
+      description: "<strong>Rocket Media</strong> web development & design studio portfolio. Modern, responsive layouts with clean code, bilingual UX, tools section, and a smooth project showcase—from concept to deployment.",
+      image: "https://res.cloudinary.com/dqph2qm49/image/upload/v1777985907/rocketMedia/sustitution-webp/portfolio-rm_evvu7u.png",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Vercel"],
+      link: "https://www.rocketmedia.website/",
       repo: null,
       featured: true,
       categories: ["website"]
